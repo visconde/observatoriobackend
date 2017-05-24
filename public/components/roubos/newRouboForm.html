@@ -1,0 +1,62 @@
+<div ng-hide="vm.isLoggedIn()">
+    <div ng-include src="'/components/auth/login-message.html'"></div>
+
+</div>
+
+
+<form ng-submit="vm.addNew()" ng-show="vm.isLoggedIn()" style="margin-top:30px;">
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block">
+            <label>Local</label>
+            <input ng-model="vm.roubo.title">
+        </md-input-container>
+  </div>  <div layout-gt-sm="row">
+        <md-input-container class="md-block">
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+        </md-input-container>
+    </div>  <div layout-gt-sm="row">
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Marca da Bicicleta</label>
+            <input ng-model="vm.roubo.brand">
+        </md-input-container>
+  </div>
+  <div layout-gt-sm="row">
+        <md-input-container class="md-block">
+            <label>Cor da Bicicleta</label>
+            <input ng-model="vm.roubo.color">
+        </md-input-container>
+    </div>
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block">
+            <label>Número de Série</label>
+            <input ng-model="vm.roubo.serial">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Observações</label>
+            <input ng-model="vm.roubo.serial">
+        </md-input-container>
+    </div>
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block">
+            <label>latitude</label>
+            <input ng-model="vm.roubo.lat">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>longitude</label>
+            <input ng-model="vm.roubo.long">
+        </md-input-container>
+
+    </div>
+
+
+
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-raised" type="submit">Adicionar</md-button>
+    </md-card-actions>
+
+
+    <!-- <button type="submit" class="btn btn-primary">Post</button> -->
+</form>

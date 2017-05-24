@@ -1,0 +1,115 @@
+<!-- <div> -->
+    <!-- <section layout="row" flex style="padding:0px"> -->
+
+        <!-- <md-content flex layout-padding style="padding:0px"> -->
+
+
+
+
+
+
+            <ng-map zoom="10" center="-33.9, 151.2" on-click="vm.mapClick(event,s)" style="padding:0px; height: 100%">
+                <bicycling-layer></bicycling-layer>
+                <marker ng-repeat="roubo in vm.roubos" title="{{roubo.title}}" position="{{roubo.loc[1]}},{{roubo.loc[0]}}" on-click="vm.showDetail(roubo)"></marker>
+
+                <!-- icon="{{vm.image}}" shape="{{vm.shape}}" -->
+
+                <custom-control style="width:100%;height:25%" position="BOTTOM" id="home" index="1" on-click="vm.click()">
+
+                    <div style="bottom:35px; right:45px; position: absolute;">
+                        <!-- <md-button class="md-fab md-primary " ng-click="vm.toggleRight();vm.addNewRoubo = true">
+                        <i class="material-icons">more_vert</i>
+                        </md-button> -->
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">add</i>
+  </button>
+                    </div>
+
+
+                </custom-control>
+
+
+                 <!-- <custom-control position="BOTTOM_RIGHT" style="padding:20px;right:-50px; z-index:0"id="home" index="1" on-click="vm.click()">
+
+            <md-button class="md-fab md-primary" aria-label="Use Android">
+                  <i class="fa fa-plus"></i>
+                   </md-button>
+</custom-control>  -->
+
+                <!-- <custom-control position="TOP_RIGHT" style="padding:20px" id="home" index="1" on-click="vm.click()">
+                    <div ng-show="vm.currentRoubo" style="padding:20px">
+                        <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                            <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">  {{vm.currentRoubo.title}} </span>
+                                    <span class="md-subhead">10/02/30</span>
+                                </md-card-title-text>
+
+                            </md-card-title>
+                            <md-card-content>
+                                <p>
+                                    {{vm.currentRoubo.color}}</p>
+                                <p> {{vm.currentRoubo.serial}}</p> {{vm.currentRoubo.obs}} </p>
+                                <p>{{vm.currentRoubo.loc}}
+                                </p>
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button ng-click="vm.currentRoubo = undefined">fechar</md-button>
+
+                            </md-card-actions>
+                        </md-card>
+
+
+
+                    </div>
+
+                </custom-control> -->
+
+
+            </ng-map>
+
+
+
+            <!-- <div ng-if=false>
+                <div ng-repeat="roubo in vm.roubos">
+                    {{roubo.title}}<br /> {{roubo.brand}}
+                    <br /> {{roubo.colour}}
+                    <br /> {{roubo.serial}}
+                    <br /> {{roubo.obs}}
+                    <br />{{roubo.loc}}
+                    <hr />
+                </div>
+
+
+                <div class="row">
+                    <h3>Reportar um roubo</h3>
+
+                    <div class="col-lg-6">
+                        {{vm.roubo}}
+                    </div>
+
+                </div>
+            </div> -->
+        <!-- </md-content> -->
+
+
+
+        <md-sidenav class="padding-top md-sidenav-right md-whiteframe-4dp padding-top" style="padding-top:56px" md-component-id="right">
+
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Adicionar Novo side</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                Adicionar Novo
+                <ng-include src="'/components/roubos/newRouboForm.html'"></ng-include>
+                <md-button class="md-primary">
+                    Close Sidenav Right
+                </md-button>
+            </md-content>
+
+        </md-sidenav>
+
+    <!-- </section> -->
+
+<!-- </div> -->
